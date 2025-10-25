@@ -1,0 +1,23 @@
+# EXCEL
+Widely used spreadsheet tool for data entry and basic analysis
+Key-features: Formulas, PivotTables, Charts, Conditional Formatting
+Great for initial data cleaning and quick insights
+Suitable for business users with minimal technical knowlege background
+
+# SQL(PostgreSQL): Working with databases
+PostgreSQL is a powerful open-source relational database
+SQL is used to query, filter and join large datasets
+Ideal for structured data and relational operations
+Used for backend data storage and analysis in real-world applications 
+
+# Power-Bi
+A business analytics tool from Microsoft
+Helps visualize data and share insights across an organization
+Data Connectivity: Supports Excel, SQL, WebAPIs etc
+DAX (Data Analysis Expression): Custom Calculations and KPI
+
+# Python
+Python is a popular programming language for data science 
+Pandas is a powerful library for data manipulation and analysis
+Great for automation, large datasets and in-depth analytics 
+Integrates well with visualization tools like matplotlib and seaborn
