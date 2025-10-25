@@ -1,0 +1,16 @@
+What is Business Data Analyst? 
+-> Understanding the role and impact in data-driven decision making 
+
+> Key Responsibilities
+Data collection and analysis
+Interpreting and visualizing data trends
+Communicating insights to stakeholders
+Supporting business decisions with data
+Creating dashboards and reports
+
+> Core skils of business data analyst
+Data analysis and visualization
+Strong business acumen
+Proficiency in tools: Excel, SQL, Power BI, Python
+Effective communication and storytelling with data
+Critical Thinking and attention to detail
