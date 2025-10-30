@@ -110,3 +110,17 @@ SELECT DISTINCT positions from employees;
 
 # COUNT function count number of rows or columns what to count
 SELECT COUNT(*) AS total FROM employees;
+
+# WHERE CLAUSE 
+SELECT * FROM employees WHERE hire_date > '2024-12-07'
+SELECT * FROM employees WHERE position = "Developer" AND salary > 60000;
+SELECT * FROM employees WHERE salary BETWEEN 10000 AND 40000;
+
+# ORDER BY position
+SELECT * FROM employees ORDER BY position/column ASC/DESC ( by default ascending is there);
+
+# LIMIT will limit the output from the queries
+SELECT * FROM employees ORDER BY salary DESC LIMIT 2;
+
+# USING OFFSET will ignore the that many records
+SELECT * FROM employees order by salar DESC LIMIT 2 OFFSET 2; (will ignore first 2 records);
