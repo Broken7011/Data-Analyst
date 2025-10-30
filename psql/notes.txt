@@ -103,5 +103,10 @@ UPDATE employees SET salary = 70000 WHERE id=2;
 
 DELETE FROM employees WHERE id=2;
 
+# GET UNIQUE DATA FROM THE TABLE
 
+SELECT DISTINCT positions from employees;
+ # distinct is the keyword
 
+# COUNT function count number of rows or columns what to count
+SELECT COUNT(*) AS total FROM employees;
