@@ -85,3 +85,23 @@ CREATE TABLE product_sales (
   total_amount AS (quantity_sold * unit_price) STORED
 );
 
+# INSERTING DATA INTO TABLE
+
+INSERT INTO employees (name,position, salary)
+VALUES ("Alice","Manager",75000),
+        ("Smith","Developer",65000),
+        ("Clare","Designer",55000);
+
+# TO SEE AND VISUALISE THE DATA 
+SELECT * FROM employees WHERE salary > 40000;
+
+# UPDATE data in table
+
+UPDATE employees SET salary = 70000 WHERE id=2;
+
+# DELETE DATA
+
+DELETE FROM employees WHERE id=2;
+
+
+
