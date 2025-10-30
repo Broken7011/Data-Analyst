@@ -38,6 +38,22 @@ Geometric Types
 JSON/JSONB
 CutomTypes(user defined)
 
+# UNDERSTANDING Schemas in PostgreSQL
+Schemas are logical containers within a postgreSQL database:
+allow organization of database objects( tables,views, functions etc)
+Provide namespace management to avoid name conflicts 
+Users can create and manage multiple schemas
 
+# Difference between a schema and a database
+In postgreSQL , the main difference between a schema and a database is that a schema is a structural
+representation of the data within a database, while a database is a container that holds the schemas,
+records, logs, and table constraints.
 
-
+# Creating schemas and Tables
+1. Create schema sales;
+2. Create a table in the schema
+ CREATE TABLE sales.orders (
+      id SERIAL PRIMARY KEY,
+      customer_name TEXT,
+      total NUMERIC
+);
