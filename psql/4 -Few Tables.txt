@@ -1,0 +1,51 @@
+Sample Tables
+
+
+CREATE TABLE users(
+	user_id SERIAL PRIMARY KEY,
+	username VARCHAR(100) UNIQUE,
+	email VARCHAR(100) UNIQUE,
+	age INT
+);
+
+
+CREATE TABLE students(
+	student_id SERIAL PRIMARY KEY,
+	name VARCHAR(100),
+	birthday DATE
+);
+
+
+CREATE TABLE orders(
+	order_id SERIAL PRIMARY KEY,
+	order_date DATE,
+	cust_id INT,
+	FOREIGN KEY(cust_id)
+		REFERENCES customers(cust_id)
+		ON DELETE CASCADE
+		ON UPDATE CASCADE
+);
+
+
+=============
+
+
+CREATE TABLE employees(
+	employee_id SERIAL PRIMARY KEY,
+	name VARCHAR(100),
+	age INT,
+	salary DECIMAL(10,2),
+	CHECK(age BETWEEN 18 AND 65), -- Age between 18 - 65
+	CHECK(salary > 0) -- Ensure salary above 0
+);
+
+
+====
+
+
+CREATE TABLE employees (
+    employee_id SERIAL PRIMARY KEY,
+    name VARCHAR(100),
+    status VARCHAR(20) DEFAULT 'active',      -- Default value for status is 'active'
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP -- Default value for created_at is the current timestamp
+);
