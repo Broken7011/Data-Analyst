@@ -1,1 +1,43 @@
+Relational Databases store data in tables(relations)
+Data is organized into rows(record) and columns (fields)
+
+Tables are related through keys
+Ensures data integrity and reduces redundancy.
+
+
+# KEY CONCEPTS
+Tables: Core structure for data storage
+Primary Key: Uniquely identifies a record
+Foreign Key: Establishes relationships between tables
+SQL: Structured query language for database operations
+
+# Normalization
+Normalization organizes data to minimize redundancy
+1NF: Eliminates duplicate columns
+2NF: Remove subsets of data in multiple rows
+3NF: Ensure all attributes depend only on the primary Key
+
+# Advantages of Relational Databases:
+Data integrity and accuracy 
+Flexibility in data retrieval 
+Support for transactions and concurrency 
+Scalability and performance 
+
+
+# Data Types 
+Numeric Types (eg: Integer , BIGINT, REAL)
+   --> -32,768 to 32,767 *-> SMALL INT
+   --> Integer -2,147,483,648 to 2,146,483,647)
+   --> BigInt: very large integers
+   --> DECIMAL / DOUBLE(floating point numbers )
+
+Character Types ( CHAR,VARCHAR, TEXT)
+Date/time Types ( TIMESTAMP, DATE)
+Boolean Type
+Geometric Types
+JSON/JSONB
+CutomTypes(user defined)
+
+
+
 
