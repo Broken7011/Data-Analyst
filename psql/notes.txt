@@ -57,3 +57,31 @@ records, logs, and table constraints.
       customer_name TEXT,
       total NUMERIC
 );
+
+CREATE TABLE public.employee (
+  id serial NOT NULL,
+  name character varying(100),
+"position" character varying(50),
+ salary numeric(10),
+ hire_date date DEFAULT CURRENT_DATE,
+PRIMARY KEY (id)
+);
+
+# FOR MODIFICATION
+ALTER TABLE public.employees ADD COLUMN department VARCHAR(50);
+ALTER TABLE public.employees RENAME COLUMN department TO dept;
+
+# FOR DELETION OF A TABLE 
+DROP TABLE employees 
+
+# CREATE A TABLE for SALES
+CREATE TABLE product_sales (
+  sale_id SERIAL PRIMARY KEY,
+  product_id INT NOT NULL,
+  product_name VARCHAR(100) NOT NULL,
+  sale_date DATE NOT NULL , 
+  quantity_sold INT NOT NULL CHECK (quantity_sold >=0),
+  unit_price DECIMAL(10,2) NOT NULL CHECK(unit_price >=0),
+  total_amount AS (quantity_sold * unit_price) STORED
+);
+
