@@ -161,3 +161,48 @@ SELECT * FROM employees e FULL OUTER JOIN customers c ON e.id = c.id
 
 SELECT E1.name as empl_name , E2.name AS manager_name FROM employees E1 LEFT JOIN employees E2 ON
 E1.manager_id = E2.id;
+
+SELECT * FROM products CROSS JOIN colors;
+
+
+
+## CONSTRAINTS
+> CREATE TABLE users(
+ user_id SERIAL PRIMARY KEY,
+ name VARCHAR(100) NOT NULL,  ## It will make sure that no value will be null
+ email VARCHAR(100) NOT NULL, ## here as well
+ OR
+ email VARCHAR(100) UNIQUE ## it will make sure that every value would be unique 
+age INT
+);
+
+# FORIEGN KEY references from other table as reference
+CREATE TABLE orders( 
+  order_id SERIAL PRIMARY KEY,
+  order_date DATE,
+  cust_id INT,
+  FOREIGN KEY(cust_id)
+  REFERENCES customers(cust_id)
+);
+
+# CHECK make sure it does the thing within the range
+CREATE TABLE employees(
+  employee_id SERIAL PRIMARY KEY,
+  name VARCHAR(100),
+  age INT,
+  salary DECIMAL(10,2),
+  CHECK(age BETWEEN 18 AND 65), -- Age between 18-65
+  CHECK(salary>0) --> Ensure salary above 0
+
+# DEFAULT helps to make a default value  
+CREATE TABLE employees(
+   employee_id SERIAL PRIMARY KEY,
+   name VARCHAR(100),
+   status VARCHAR(20) DEFAULT 'active',
+   created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP 
+
+# LIKE WILDCARDS --> % , __ ,"A%"
+# INDEX is a fast version of looking at the table 
+CREATE INDEX idx_employee_name ON employees (name);
+
+
