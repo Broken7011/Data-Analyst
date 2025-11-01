@@ -1,0 +1,115 @@
+Project Schema - Tables (Company Management System)
+
+=================
+
+CREATE DATABASE company_db;
+
+================
+ CREATE TABLE departments (
+       department_id SERIAL PRIMARY KEY,
+       department_name VARCHAR(50) NOT NULL UNIQUE
+   );
+
+
+CREATE TABLE employees (
+       employee_id SERIAL PRIMARY KEY,
+       first_name VARCHAR(50) NOT NULL,
+       last_name VARCHAR(50) NOT NULL,
+       email VARCHAR(100) UNIQUE NOT NULL,
+       department_id INT REFERENCES departments(department_id),
+       salary NUMERIC(10, 2) NOT NULL,
+       hire_date DATE DEFAULT CURRENT_DATE
+   );
+
+
+CREATE TABLE projects (
+       project_id SERIAL PRIMARY KEY,
+       project_name VARCHAR(100) NOT NULL
+   );
+
+
+CREATE TABLE employee_projects (
+       employee_id INT REFERENCES employees(employee_id),
+       project_id INT REFERENCES projects(project_id),
+       PRIMARY KEY (employee_id, project_id)
+   );
+
+
+=====================
+
+INSERT statements
+
+ INSERT INTO departments (department_name) VALUES
+   ('HR'),
+   ('Engineering'),
+   ('Sales'),
+   ('Marketing');
+
+
+INSERT INTO employees (first_name, last_name, email, department_id, salary) VALUES
+   ('John', 'Doe', 'john.doe@example.com', 2, 75000.00),
+   ('Jane', 'Smith', 'jane.smith@example.com', 3, 65000.00),
+   ('Alice', 'Johnson', 'alice.johnson@example.com', 2, 80000.00),
+   ('Bob', 'Brown', 'bob.brown@example.com', 1, 50000.00);
+
+
+INSERT INTO projects (project_name) VALUES
+   ('Website Redesign'),
+   ('AI Development'),
+   ('Product Launch');
+
+
+ INSERT INTO employee_projects (employee_id, project_id) VALUES
+   (1, 1), -- John -> Website Redesign
+   (1, 2), -- John -> AI Development
+   (2, 3), -- Jane -> Product Launch
+   (3, 2); -- Alice -> AI Development
+
+=====================
+
+Querying the Data
+
+SELECT 
+       e.employee_id,
+       e.first_name,
+       e.last_name,
+       d.department_name,
+       p.project_name
+   FROM 
+       employees e
+   JOIN 
+       departments d ON e.department_id = d.department_id
+   LEFT JOIN 
+       employee_projects ep ON e.employee_id = ep.employee_id
+   LEFT JOIN 
+       projects p ON ep.project_id = p.project_id;
+
+
+=====================
+
+Indexing
+
+CREATE INDEX idx_employee_email ON employees(email);
+CREATE INDEX idx_employee_department_id ON employees(department_id);
+CREATE INDEX idx_project_name ON projects(project_name);
+
+===============
+
+Analysis / Analyze query 
+
+EXPLAIN ANALYZE
+     SELECT * FROM employees WHERE department_id = 2;
+
+==============================
+
+
+VACUUM ANALYZE;
+
+
+===================
+
+
+CREATE TABLE employees_hr PARTITION OF employees FOR VALUES IN (1);
+     CREATE TABLE employees_engineering PARTITION OF employees FOR VALUES IN (2);
+
+
