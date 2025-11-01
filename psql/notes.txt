@@ -124,3 +124,26 @@ SELECT * FROM employees ORDER BY salary DESC LIMIT 2;
 
 # USING OFFSET will ignore the that many records
 SELECT * FROM employees order by salar DESC LIMIT 2 OFFSET 2; (will ignore first 2 records);
+
+# FUNCTIONS: SUM AVG MAX MIN
+SELECT SUM(salary) AS total_salary FROM employees WHERE position = "Developers";
+
+# IF I WANT TO GROUP the salary as different different rows then GROUP BY position:
+
+SELECT position,SUM(salary) as Total_salary FROM employees GROUP BY position;
+SELECT position,AVG(salary) as avg_salary FROM employees GROUP BY position;
+SELECT position,MIN(salary) as min_salary FROM employees GROUP BY position;
+SELECT position,Max(salary) as max_salary FROM employees GROUP BY position;
+
+# STRING AGGREGATOR is used to combine the results of column 
+SELECT position, STRING_AGG(name,",") AS employee_names FROM employees GROUP BY position;
+
+# COUNT THE unique values 
+SELECT COUNT(DISTINCT position) AS uniue_positions FROM employees;
+
+# IF YOU WANT TO APPLY FILTER AFTER GROUPING THEN HAVING CLAUSE
+
+SELECT department, SUM(salary)  AS Total_salary FROM employees GROUP BY department HAVING SUM(salary) > 8500;
+
+
+
