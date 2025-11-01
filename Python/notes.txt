@@ -1,0 +1,56 @@
+name = "John Doe" # variable
+age= 30
+is_student = false
+# used to save data as memory block
+# True/ False , 30 , 100.00 are type of data
+
+Integer  --> number
+Float -> decimal
+String --> "Character"
+List --> []
+Tuple --> ()
+Set  -- {}
+dictionary -- key: value
+Boolean == TRUE / FALSE
+
+# TO CHECK TYPE OF DATA
+num = 123
+print(type(num))
+
+# To typecast the data / forcing data into different type of data
+str/int/float(_variable_name)
+
+# STRINGS
+greeting = "Hello World"
+print(greeting[0]) --> Access characters in a string using indexing
+print(len(greeting)) --> get the length of  a string
+print(greeting + " " + name + "!" ) # hello world name!
+print(greeting[7:12]) --> slicing a string output --> world
+print(greeting.upper()) # output "HELLO WORLD!"
+print(greeting.lower()) # output "hello world!"
+# REPLACE a substring in a string print(greeting.replace("World","Universe"))
+
+
+#ARITHMETIC OPERATORS
+x + y
+x - y
+x * y
+x / y
+x // y
+x % y
+x ** y
+
+## COMPARISON OPERATORS
+a == b 
+a != b
+a < b
+a > b
+a <= b
+a >= b
+
+## LOGICAL OPERATORS
+cond1 and Cond2  > both need to be true
+cond2 or cond2   > either have to be true 
+cond not true 
+
+
