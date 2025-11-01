@@ -145,5 +145,19 @@ SELECT COUNT(DISTINCT position) AS uniue_positions FROM employees;
 
 SELECT department, SUM(salary)  AS Total_salary FROM employees GROUP BY department HAVING SUM(salary) > 8500;
 
+### JOINS 
+> INNER JOIN: Returns only matching rows from both tables.
+> LEFT JOIN (or LEFT OUTER JOIN): returns all rows from the left table and matching
+rows from the right table.
+> RIGHT JOIN (or RIGHT OUTER JOIN)L returns all rows from the right table and matching
+rows from the left table
+> FULL OUTER JOINL returns rows when there is a match in one of the tables
+> CROSS JOIN: returns the cartesian product of the two tables;
 
+SELECT * FROM employees e INNER JOIN customers c ON e.id = c.id
+SELECT * FROM employees e LEFT JOIN customers c ON e.id = c.id
+SELECT * FROM employees e RIGHT JOIN customers c ON e.id = c.id
+SELECT * FROM employees e FULL OUTER JOIN customers c ON e.id = c.id
 
+SELECT E1.name as empl_name , E2.name AS manager_name FROM employees E1 LEFT JOIN employees E2 ON
+E1.manager_id = E2.id;
