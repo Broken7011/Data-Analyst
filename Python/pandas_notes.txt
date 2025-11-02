@@ -82,3 +82,21 @@ df['Post_tax'] = df['Salary'].apply(lambda x: x * 0.90)
 
 Task: Add ₹5000 bonus only for employees with salary below ₹60,000.
 df['Bonus_salary'] = df['Salary'].apply(lambda x: x + 5000 if x < 60000 else x)
+
+# AGGREGATE FUNCTIONS 
+
+import pandas as pd
+df = pd.read_excel('data.xlsx')
+print("Total_salary :" , df["Salary"].sum())
+print("Average Age: ", df["Salary"].mean())
+print("Highest Salary: " , df["Salary"].max())
+
+## IF I WANT TO SEE GROUPED BY like SQL
+grouped_df = df.groupby('Age',as_index=False)['Salary'].count()
+print(grouped_df)
+
+## YOU WANT TO VISUALISE THE DATA
+import matplotlib.pyplot as plt 
+import pandas as pd
+grouped_df.plot(kind="bar",title="Salary Distribution")
+plt.show
