@@ -1,0 +1,45 @@
+Pandas is a powerful python library for data manipulation and analysis
+it provides data structures like series and dataFrame
+Built on NumPy, it enables efficient handling of structured data
+ > Support for missing data
+ > Data filtering, merging and reshaping
+ > Integration with other data analysis libraries
+
+# SERIES: one dimensinal labeled array
+# DATAFRAME: Two dimensional labeled array
+>> OPERATIONS
+Reading data from CSV, EXCEL , databases
+Data cleaning , Handling missing values , duplicates
+Data transformation: Sorting , filtering and grouping
+Statistical functionsL mean median correlation
+
+# A dataframe is a two dimensional, size-mutable and hetrogenous data structure in pandas
+# It is similar to a table in SQL or an excel spreadsheet
+# Provides labeled axes (rows and columns) for easy data manipulation
+
+import pandas as pd
+data = {"Name": ["Alice", "Bob", "Rish"],
+        'Age': [25,30,100]}
+df = pd.DataFrame(data)
+print(df)
+
+# Common Operations 
+Viewwing Data: df.head(), df.tail()
+Selecting Data: df['column_name'], df.iloc[0]
+Filtering: df[df['Age'] >25]
+AddingCOlumns: df['Salary] = [50000,60000]
+
+# TO read a csv file
+import pandas as pd 
+df = pd.read_csv('data_csv.csv')
+print(df)
+
+# To read an excel file
+import pandas as pd 
+df = pd.read_excel('data_csv.xlsx')
+print(df)
+
+# To read json file
+import pandas as pd  
+df = pd.read_json('data.js')
+print(df)
