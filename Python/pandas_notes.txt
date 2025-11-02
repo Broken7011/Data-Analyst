@@ -24,10 +24,15 @@ df = pd.DataFrame(data)
 print(df)
 
 # Common Operations 
-Viewwing Data: df.head(), df.tail()
+Viewwing Data: df.head() --> first 5 lines , df.tail() --> last 5 lines
 Selecting Data: df['column_name'], df.iloc[0]
 Filtering: df[df['Age'] >25]
 AddingCOlumns: df['Salary] = [50000,60000]
+Information: df.info() will info about null columns and colums information
+Data-Insights like mean median etc: df.describe()
+df.shape() --> to give insights about shape of the whole model
+df.columns() --> to see columns of the model
+
 
 # TO read a csv file
 import pandas as pd 
@@ -43,3 +48,37 @@ print(df)
 import pandas as pd  
 df = pd.read_json('data.js')
 print(df)
+
+
+# IF we have NaN values or Zero values or Blank Values 
+import pandas as pd
+df = pd.read_excel('data.xlsx')
+newdf = df.fillna(0) # Replace NaN with 0 or something else whatever you want
+new_df = df.dropna() # Drop rows with NaN values 
+print(newdf.to_string())
+
+# To rename a column 
+df.rename(columns={"Salary": "Income"}, inplace=True)
+
+# To Change data type
+df['Salary'] = df['Salary].astype(float)
+
+# To check whether it has duplicate data or not
+df.duplicated()
+
+# To drop dulplicate records
+df.drop_duplicates(inplace=True)
+
+# To Increase salary or apply any method then we can use lambda function
+
+df['New_salary'] = df['Salary'].apply(lambda X: X * 1.10) # Increasing salary by 10%
+You're increasing the salary by 10%. That means:
+- 100% of the original salary → 1.00 * X
+- Add 10% more → 1.10 * X
+So multiplying by 1.10 gives you the new salary with a 10% raise
+
+Task: Deduct 10% tax from each salary and store in a new column Post_tax.
+df['Post_tax'] = df['Salary'].apply(lambda x: x * 0.90)
+
+Task: Add ₹5000 bonus only for employees with salary below ₹60,000.
+df['Bonus_salary'] = df['Salary'].apply(lambda x: x + 5000 if x < 60000 else x)
