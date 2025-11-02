@@ -108,3 +108,100 @@ while True:
    else:
        print("Too high")
 
+## FUNCTION is a block of organized , reusable code that performs a specific task whenever we call
+def function_name(arguments):
+  return result
+
+def add(a,b):
+ result = a+b
+ return result
+
+sum = add(3,4)
+print(sum) # output: 7
+ 
+### OOPS
+
+class Car:
+   def __init__(self, make , model, year):
+         self.make = make
+         self.model = model
+         self.year = year
+   def start(self):
+        print(f"{self.make} {self.model} started")
+   def stop(self):
+        print(f"{self.make} {self.model} stopped")
+
+my_car = Car("toyota","Camry",2020)
+my_car.start()
+my_car.stop()
+
+
+### INHERITANCE 
+
+class Animal:
+   def __init__(self,name, species):
+     self.name = name
+     self.species = species
+   def make_sound(self):
+      print("Some generic animal sound")
+
+class Dog(Animal): # extending class Animal 
+   def __init__(self,name, breed):
+         Animal.__init__(self, name, species="Dog")
+         self.breed = breed  # calling 
+   def make_sound(self):
+        print("Bark")
+
+dog = Dog("Rocky","Labrador")
+print(dog.name)
+print(dog.species)
+
+
+# POLYMORPHISM in python refers to the ability of objects of differnt classes to respond to the same method call with their own implementation.
+
+class Animal:
+   def make_sound(self):
+     pass
+class Dog(Animal):
+    def make_sound(self):
+         print("Bark")
+class Cat(Animal):
+    def make_sound(self):
+         print("Meow")
+class Bird(Animal):
+      def make_sound(self):
+           print("Chirp")
+def make_animals_sound(animals):
+      for animal in animals:
+            animal.make_sound()
+dog = Dog()
+cat = Cat()
+bird = Bird()
+
+animals = [dog,cat, bird]
+make_animals_sound(animals)
+
+## ABSTRACT CLASS in python is a class that is meant to be used as a base class for other classes and can not be instantiated directly. it acts as a blueprint for creating other classes and provides a common interface for its derived classes.
+
+
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+   @abstractmethod
+   def area(self):
+       pass
+   @abstractmethod
+   def perimeter(self):
+       pass
+
+class Square(shape):
+         def __init__(self,side):
+           self.side = side
+         def area(self):
+              return self.side * self.side
+
+         def perimeter(self):
+              return self.side *4 
+square = Square(4)
+print("Area: ", square.area())
+print("Perimeter: ", square.perimeter())
