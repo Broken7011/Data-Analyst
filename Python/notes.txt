@@ -205,3 +205,20 @@ class Square(shape):
 square = Square(4)
 print("Area: ", square.area())
 print("Perimeter: ", square.perimeter())
+
+
+# Encapsulation refers to the practice of wrapping data and behaviour within an object, making it inaccessible to external code. This protects the internal state of the object from being modified
+by external code and helps to ensure the correct operation of the object.
+
+class BankAccount:
+        def __init__(self, balance):
+               self._balance = balance
+        def deposit(self,amount):
+               self._balance +=amount
+
+        def withDraw(self, amount):
+            if self._balance >= amount:
+                  self._balance -= amount
+            else:
+                  print("Insufficient funds")
+
