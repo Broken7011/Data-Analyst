@@ -1,0 +1,11 @@
+Business intelligence refers to the processes and technologies used to analyze data and present actionable insights.
+PowerBI is a leading BI tool providing advanced analytics and visualization capabilities
+> Interactive Dashboards
+> Real-time data connectivity
+> AI-powered insights
+> seamless integration with other Microsoft tools
+> Customizable and extensible visualizations
+
+# Data Visualization
+> the graphical representation of information and data.
+> Helps identify trends, patterns and insights.
