@@ -9,3 +9,30 @@ PowerBI is a leading BI tool providing advanced analytics and visualization capa
 # Data Visualization
 > the graphical representation of information and data.
 > Helps identify trends, patterns and insights.
+
+$ DATA SOURCES 
+PowerBI supports a wide range of data sources
+it enables seamless integration and data analysis from various platforms
+Examples --> files, databases, online services
+
+# Types of Data Model
+1. Star Schema 
+   Central fact table linked to multiple dimension tables
+2. Snowflake Schema
+   Dimension tables are normalized into multiple related tables
+3. Single Table Model
+   All data is stored in one table
+
+> Tables: Organize data in rows and columns
+> Relationships: Define connections between tables.
+> Keys: Unique identifiers for table rows (Primary and foreign keys)
+< Measures: Calculations for data analysis
+< Columns: Data fields in tables
+
+# DAX 
+Data analysis Expressions
+It is a formula language used in PowerBI, Excel and SQL server analysis services
+DAX enables the creation of custom calculations and aggregations for data analysis 
+It includes a wide range of functions, operators and constants
+
+
