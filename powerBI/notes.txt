@@ -35,4 +35,23 @@ It is a formula language used in PowerBI, Excel and SQL server analysis services
 DAX enables the creation of custom calculations and aggregations for data analysis 
 It includes a wide range of functions, operators and constants
 
-
+Total_Sales = SUM(Sheet1[SalesAmount])
+Total Quantity = SUM(Sales_Transactions[Quantity])
+Sales After Discount =
+SUMX(
+    Sales_Transactions,
+    Sales_Transactions[Quantity] *
+    Sales_Transactions[UnitPrice] *
+    (1 - Sales_Transactions[Discount])
+)
+Avg Discount = AVERAGE(Sheet1[Discount])
+Monthly_Sales = CALCULATE(SUM(Sheet1[SalesAmount]), VALUES(Sheet1[Date]))
+Profit Margin % = 
+DIVIDE(
+    SUMX(Sales_Transactions, Sales_Transactions[SalesAmount] * 0.25),
+    SUM(Sales_Transactions[SalesAmount])
+)
+UniqueProducts = DISTINCTCOUNT(Sales[ProductID])
+TotalRevenue = SUMX(sales, sales[Quantity[ * RELATED(Table2[Price])
+                 |
+                  returns the sum of an expression evaluated for reach row in a table
